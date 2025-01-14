@@ -1,6 +1,11 @@
 main {
     background-color: #F7F6F8;
 }
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
 
 li {
     font-family: "Cabin Condensed", serif;
