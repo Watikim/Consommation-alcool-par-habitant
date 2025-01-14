@@ -1,1 +1,12 @@
-.
+body {
+    background-color: #F7F6F8;
+}
+
+h1 {
+    font-family: "Cabin Condensed", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+h2 {
+    color: #F7F6F8;
+}
