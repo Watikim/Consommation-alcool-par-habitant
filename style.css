@@ -10,3 +10,9 @@ h1 {
 h2 {
     color: #F7F6F8;
 }
+
+p {
+    font-family: "Cabin Condensed", serif;
+    font-weight: 400;
+    font-style: normal;
+}
