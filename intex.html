@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -61,6 +61,20 @@
                     }]
                 },
             });
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Asie', 'Océanie', 'Europe', 'Amérique', 'Afrique'],
+                    datasets: [{
+                        label: 'Consommation alcool par continent',
+                        data: [4.80, 4.58, 7.10, 5.49, 4.85],
+                        borderWidth: 1
+                    }]
+                },
+            });
+            
+            
         </script>
     </main>
 
