@@ -44,3 +44,8 @@ p {
     height: 1016px;
     width: 1933px;
 }
+
+#chart{
+    width: 50%;
+    margin: 0 auto;
+}
