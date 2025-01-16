@@ -1,46 +1,70 @@
-main {
-    background-color: #F7F6F8;
+@font-face {
+    font-family: 'bahnschriftregular';
+    src: url('asset/media/bahnschrift_1-webfont.woff2') format('woff2'),
+         url('asset/media/bahnschrift_1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
+
+body {
+    background-color: #F7F6F8;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+
 
 header{
     background-color: #d9d9d9;
     height: 70px;
-    margin-top: -16px;  
-}
-
-body {
-    display: flex;
-    margin: 0;
-    padding: 0;
 }
 
 ul{
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    padding-top: 40px;
+    padding-top: 30px;
 }
 
 li {
-    font-family: "Cabin Condensed", serif;
-    font-weight: 700;
-    font-style: normal;
+    font-family: "bahnschriftregular";
+    font-weight: 400;
     color: #810404;
 }
 
 
 
-h2 {
-    color: #F7F6F8;
+main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 60px;
 }
 
-p {
-    font-family: "Cabin Condensed", serif;
-    font-weight: 400;
+h1{
+    font-size: 5rem;
+    font-family: "Carlito", serif;
+    font-weight: 700;
     font-style: normal;
 }
 
+p {
+    font-family: "Carlito", serif;
+    margin: 5% 20% 10% 20%;
+    text-align: left;
+}
+
+#containerAffiche{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #810404;
+    height: 800px;
+}
+
 #affiche{
-    height: 1016px;
-    width: 1933px;
+    width: 60%;
 }
