@@ -8,13 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="asset/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <title>Consommation d'Alcool</title>
 </head>
 
 <body>
 
-    <header>
+    <header class="headerFooter">
         <ul id="menu">
             <li class="liste">Datalogie</li>
             <li class="liste">Introduction</li>
@@ -40,14 +41,14 @@
         </div>
 
         <hr>
-        <h2 id="h2title">Consommation d'alcool</h2>
+        <h2 class="h2title">Consommation d'alcool</h2>
         <hr>
 
 
-        <canvas id="chart"  ></canvas>
+        <canvas id="chart"></canvas>
         <script>
             const ctx = document.getElementById('chart');
-            
+
 
             new Chart(ctx, {
                 type: 'bar',
@@ -61,10 +62,11 @@
                 },
             });
         </script>
-
-
-        <canvas id="chart"></canvas>
     </main>
+
+    <footer class="headerFooter">
+
+    </footer>
 
 
 </body>
