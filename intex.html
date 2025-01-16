@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -44,7 +44,7 @@
         <hr>
 
 
-        <canvas id="chart"  ></canvas>
+        <canvas id="chart"></canvas>
         <script>
             const ctx = document.getElementById('chart');
             
@@ -60,10 +60,26 @@
                     }]
                 },
             });
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Asie', 'Océanie', 'Europe', 'Amérique', 'Afrique'],
+                    datasets: [{
+                        label: 'Consommation alcool par continent',
+                        data: [4.80, 4.58, 7.10, 5.49, 4.85],
+                        borderWidth: 1
+                    }]
+                },
+            });
+            
+            
         </script>
+        
 
 
-        <canvas id="chart"></canvas>
+
+        
     </main>
 
 
