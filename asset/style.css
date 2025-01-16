@@ -16,10 +16,18 @@ body {
 }
 
 
+
 .headerFooter{
     background-color: #d9d9d9;
     height: 70px;
 }
+
+#header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
 
 ul{
     display: flex;
@@ -28,16 +36,21 @@ ul{
     padding-top: 30px;
 }
 
-li {
-    font-family: "bahnschriftregular";
-    font-weight: 400;
-    color: #810404;
-}
-
     li:hover{
         cursor: pointer;
         font-weight: 700;
     }
+
+a{
+    text-decoration: none;
+    color: #810404;
+    font-family: "bahnschriftregular";
+    font-weight: 400;
+}
+
+a.clicked{
+    transition: 1s;
+}
 
 
 

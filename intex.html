@@ -17,10 +17,27 @@
 
     <header class="headerFooter">
         <ul id="menu">
-            <li class="liste">Datalogie</li>
-            <li class="liste">Introduction</li>
-            <li class="liste">Analyse</li>
+            <li class="liste"><a href="#containerAffiche">Datalogie</a></li>
+            <li class="liste"><a href="#title">Introduction</a></li>
+            <li class="liste"><a href="#conso">Analyse</a></li>
         </ul>
+
+        <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+        
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        </script>        
+
 
     </header>
 
@@ -41,7 +58,7 @@
         </div>
 
         <hr>
-        <h2 class="h2title">Consommation d'alcool</h2>
+        <h2 class="h2title" id="conso">Consommation d'alcool</h2>
         <hr>
 
 
