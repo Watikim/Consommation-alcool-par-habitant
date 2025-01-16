@@ -68,3 +68,8 @@ p {
 #affiche{
     width: 60%;
 }
+
+#chart{
+    width: 50%;
+    margin: 0 auto;
+}

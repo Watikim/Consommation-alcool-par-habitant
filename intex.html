@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=0.01">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="asset/style.css">
@@ -35,10 +35,32 @@
         </p>
 
         <div id="containerAffiche">
-            <img id="affiche" src="asset/media/affiche303.png" alt="Datalogie sur la consommation d'alcool par habitant">
+            <img id="affiche" src="asset/media/affiche303.png"
+                alt="Datalogie sur la consommation d'alcool par habitant">
         </div>
 
-        <hr><h2 id="h2title">Consommation d'alcool</h2><hr>
+        <hr>
+        <h2 id="h2title">Consommation d'alcool</h2>
+        <hr>
+
+
+        <canvas id="chart"  ></canvas>
+        <script>
+            const ctx = document.getElementById('chart');
+            
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Asie', 'Océanie', 'Europe', 'Amérique', 'Afrique'],
+                    datasets: [{
+                        label: 'Consommation alcool par continent',
+                        data: [4.80, 4.58, 7.10, 5.49, 4.85],
+                        borderWidth: 1
+                    }]
+                },
+            });
+        </script>
 
 
         <canvas id="chart"></canvas>
