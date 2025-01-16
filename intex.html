@@ -46,8 +46,10 @@
 
 
         <canvas id="chart"></canvas>
+        <canvas id="chart2"></canvas>
         <script>
             const ctx = document.getElementById('chart');
+            const ctx2 = document.getElementById('chart2');
 
 
             new Chart(ctx, {
@@ -62,8 +64,8 @@
                 },
             });
 
-            new Chart(ctx, {
-                type: 'line',
+            new Chart(ctx2, {
+                type: 'polarArea',
                 data: {
                     labels: ['Asie', 'Océanie', 'Europe', 'Amérique', 'Afrique'],
                     datasets: [{
@@ -76,6 +78,8 @@
             
             
         </script>
+
+        
     </main>
 
     <footer class="headerFooter">

@@ -79,7 +79,7 @@ h2{
     font-size: 2rem;
 }
 
-#chart{
+canvas{
     width: 50%;
     margin: 0 auto;
     margin-bottom: 100px;
