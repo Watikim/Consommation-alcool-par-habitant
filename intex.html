@@ -68,26 +68,27 @@
         <hr>
 
 
-        <canvas id="chart"></canvas>
-        <canvas id="chart2"></canvas>
+        <canvas id="chart"> </canvas>
+   
         <script>
             const ctx = document.getElementById('chart');
-            const ctx2 = document.getElementById('chart2');
+     
 
+    let data = [2.76, 2.91, 3.15, 3.26, 3.23];
+    let labels = ["2000", "2005", "2010", "2015", "2019"];
 
-            new Chart(ctx, {
-                type: 'bar',
+          new Chart(ctx, {
+                type: 'line',
                 data: {
-                    labels: ['Asie', 'Océanie', 'Europe', 'Amérique', 'Afrique'],
+                    labels: labels,
                     datasets: [{
-                        label: 'Consommation alcool par continent',
-                        data: [4.80, 4.58, 7.10, 5.49, 4.85],
-                        borderWidth: 1
+                        label: 'data',
+                        data: data
                     }]
-                },
+                }
             });
 
-            new Chart(ctx2, {
+          /*  new Chart(ctx2, {
                 type: 'polarArea',
                 data: {
                     labels: ['Asie', 'Océanie', 'Europe', 'Amérique', 'Afrique'],
@@ -97,7 +98,7 @@
                         borderWidth: 1
                     }]
                 },
-            });
+            });*/
             
             
         </script>
