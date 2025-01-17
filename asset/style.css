@@ -56,9 +56,9 @@ main {
 }
 
 #imgbackground{
-    /*background-image: url(media/alcool.jpeg);
+    background-image: url(media/alcool.jpeg);
     background-size: cover;
-    background-position: center;*/
+    background-position: center;
     margin-top: 80px;
 }
 
@@ -72,16 +72,17 @@ h1{
 
 p {
     font-family: "Carlito";
-    margin: 5% 20% 10% 20%;
+    margin: 5% 20% 5% 20%;
     text-align: left;
 }
 
 #containerAffiche{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #810404;
-    height: 800px;
+    height: 900px;
 }
 
 #affiche{
