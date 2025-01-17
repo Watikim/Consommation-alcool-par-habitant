@@ -73,7 +73,7 @@ h1{
 p {
     font-family: "Carlito";
     margin: 5% 20% 5% 20%;
-    text-align: left;
+    /*text-align: left;*/
 }
 
 #containerAffiche{
