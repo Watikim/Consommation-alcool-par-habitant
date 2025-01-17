@@ -16,10 +16,9 @@ body {
 }
 
 
-
 .headerFooter{
     background-color: #d9d9d9;
-    height: 70px;
+    height: 100px;
 }
 
 #header {
@@ -29,14 +28,20 @@ body {
     top: 0;
   }
 
+#imgbackground{
+    background-image: url(media/alcool.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
 ul{
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    padding-top: 30px;
+    padding-top: 45px;
 }
 
-    li:hover{
+    a:hover{
         cursor: pointer;
         font-weight: 700;
     }
@@ -58,7 +63,6 @@ main {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-top: 60px;
 }
 
 h1{
