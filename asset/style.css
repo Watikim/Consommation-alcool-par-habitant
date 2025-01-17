@@ -16,23 +16,15 @@ body {
 }
 
 
-.headerFooter{
-    background-color: #d9d9d9;
+#header{
+    background-color: #810404;
     height: 100px;
-}
-
-#header {
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
-  }
-
-#imgbackground{
-    background-image: url(media/alcool.jpeg);
-    background-size: cover;
-    background-position: center;
 }
+
 
 ul{
     display: flex;
@@ -48,7 +40,7 @@ ul{
 
 a{
     text-decoration: none;
-    color: #810404;
+    color: #ffffff;
     font-family: "bahnschriftregular";
     font-weight: 400;
 }
@@ -57,13 +49,19 @@ a.clicked{
     transition: 1s;
 }
 
-
-
 main {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
+
+#imgbackground{
+    /*background-image: url(media/alcool.jpeg);
+    background-size: cover;
+    background-position: center;*/
+    margin-top: 80px;
+}
+
 
 h1{
     font-size: 5rem;
@@ -102,3 +100,8 @@ canvas{
     margin-bottom: 100px;
 }
 
+
+#footer{
+    background-color: #e3e3e3;
+    height: 100px;
+}
