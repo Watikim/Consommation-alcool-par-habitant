@@ -72,7 +72,7 @@
 
 
         <canvas id="chart"> </canvas>
-        <container id="data-select-container">
+        <div id="data-select-container">
             <select name="datasets" id="data-select">
                 <option value="0">Océanie</option>
                 <option value="1">Asie</option>
@@ -80,9 +80,22 @@
                 <option value="3">Amérique</option>
                 <option value="4">Europe</option>
             </select>
-        </container>
+        </div>
+
+        <hr>
+        <h2 class="h2title" id="conso">Consommation de boisson spiritueux</h2>
+        <hr>
+
+        <canvas id="chart2"> </canvas>
+
+        <hr>
+        <h2 class="h2title" id="conso">Consommation de Vin</h2>
+        <hr>
+
+        <canvas id="chart3"> </canvas>
+
         <script>
-            const ctx = document.getElementById('chart');
+            const ctx1 = document.getElementById('chart');
 
             const DATASETS = [
                 { data: [3.63, 3.45, 3.42, 3.15, 3.2], label: 'Océanie' },
@@ -92,7 +105,7 @@
                 { data: [10.93, 11.12, 10.69, 10.25, 10.11], label: 'Europe' }
             ];
 
-            let chart = new Chart(ctx, {
+            let chart = new Chart(ctx1, {
                 type: 'line',
                 data: {
                     labels: ["2000", "2005", "2010", "2015", "2019"],
@@ -121,45 +134,89 @@
             };
 
 
+            const data2 = {
+                labels: [
+                    'Océanie',
+                    'Asie',
+                    'Afrique',
+                    'Amériques',
+                    'Europe'
+                    
+                ],
+                datasets: [{
+                    label: "Consommation de Vin (litres/personne)",
+                    data: [0.68, 1.16, 0.4, 2.2, 2.4], 
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)',
+                        'rgba(153, 102, 255, 0.7)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
 
-            /*const colorSel = document.getElementById("col-select");
-            colorSel.onchange = () => {
-                chart.data.datasets[0].backgroundColor = colorSel.value;
-                chart.update();
-            };*/
-
-
-            /*
-        
-            let data = [2.76, 2.91, 3.15, 3.26, 3.23];
-            let labels = ["2000", "2005", "2010", "2015", "2019"];
-        
-                  new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: 'Asie',
-                                data: data,
-                                fill: true
-                            }]
-                        }
-                    });
-        
-                  /*  new Chart(ctx2, {
-                        type: 'polarArea',
-                        data: {
-                            labels: ['Asie', 'Océanie', 'Europe', 'Amérique', 'Afrique'],
-                            datasets: [{
-                                label: 'Consommation alcool par continent',
-                                data: [4.80, 4.58, 7.10, 5.49, 4.85],
-                                borderWidth: 1
-                            }]
+            const config2 = {
+                type: 'pie',
+                data: data2,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
                         },
-                    });*/
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    return tooltipItem.label + ': ' + tooltipItem.raw + ' L/personne';
+                                }
+                            }
+                        }
+                    }
+                }
+            };
 
+            const ctx2 = document.getElementById('chart2');
+            new Chart(ctx2, config2);
 
+            const config3 = {
+                type: 'line',
+                data: data2,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    return tooltipItem.label + ': ' + tooltipItem.raw + ' L/personne';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + ' L';
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const ctx3 = document.getElementById('chart3');
+            new Chart(ctx3, config3);
         </script>
+
+
 
 
     </main>
