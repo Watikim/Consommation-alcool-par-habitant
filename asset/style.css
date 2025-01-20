@@ -68,7 +68,7 @@ h1{
     font-family: "Carlito";
     font-weight: 700;
     font-style: normal;
-    color: rgb(46, 7, 7);
+    color: rgb(102, 15, 15);
 }
 
 p {
@@ -91,13 +91,28 @@ p {
     width: 60%;
 }
 
+#soustitre{
+    background-image: url(media/drinking.webp);
+    background-size: cover;
+    background-position: center;
+}
 
 h2{
     font-family: "Carlito";
     font-weight: 700;
-    font-size: 3rem;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    font-size: 3.5rem;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    color: white;
+}
+
+
+.h3title{
+    font-family: "Carlito";
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 300px;
+    margin-bottom: 50px;
 }
 
 
@@ -121,26 +136,31 @@ canvas{
 }
 
 
-#data-select {
-    color: white;
-    background: #810404;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
+.checkbox-container {
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
     font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
 }
 
-#data-select:hover {
-    background: #810404;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
+.checkbox-container label {
+    display: block;
+    margin-bottom: 10px;
 }
 
-#data-select option {
-    background: #810404;
-    color: white;
+.checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
+    margin-left: 80px;
+    transform: scale(1.8); 
 }
+
+.checkbox-container span {
+    font-weight: bold;
+    color: #333;
+}
+
+#chart {
+    margin-top: 30px;
+}
+

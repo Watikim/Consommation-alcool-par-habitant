@@ -46,10 +46,6 @@
 
         <section id="imgbackground">
             <h1 id="title">BUVEZ AVEC MODÉRATION</h1>
-
-        </section>
-
-        <div>
             <p id="intro">En 2019, la consommation mondiale d’alcool représentait une préoccupation majeure en matière
                 de
                 santé
@@ -59,6 +55,11 @@
                 consommation ait légèrement diminué, tandis que l’Asie et l’Afrique montraient des tendances à la
                 hausse.
             </p>
+
+        </section>
+
+        <div>
+
 
 
         </div>
@@ -75,30 +76,28 @@
         <canvas id="chart"> </canvas>
 
 
-        <div id="data-select-container">
-            <select name="datasets" id="data-select">
-                <option value="0">Océanie</option>
-                <option value="1">Asie</option>
-                <option value="2">Afrique</option>
-                <option value="3">Amérique</option>
-                <option value="4">Europe</option>
-            </select>
+        <div class="checkbox-container">
+            <label><input type="checkbox" id="oceanie" checked> <span>Océanie</span></label>
+            <label><input type="checkbox" id="asie" checked> <span>Asie</span></label>
+            <label><input type="checkbox" id="afrique" checked> <span>Afrique</span></label>
+            <label><input type="checkbox" id="amerique" checked> <span>Amérique</span></label>
+            <label><input type="checkbox" id="europe" checked> <span>Europe</span></label>
         </div>
-
+        
         <hr>
-        <h2 class="h2title" id="conso">Consommation de boisson spiritueux</h2>
+        <h3 class="h3title" id="conso">Consommation de boisson spiritueux</h2>
         <hr>
 
         <canvas id="chart2"> </canvas>
 
         <hr>
-        <h2 class="h2title" id="conso">Consommation de Bière</h2>
+        <h3 class="h3title" id="conso">Consommation de Bière</h2>
         <hr>
 
         <canvas id="chart3"> </canvas>
 
         <hr>
-        <h2 class="h2title" id="conso">Consommation de Vin</h2>
+        <h3 class="h3title" id="conso">Consommation de Vin</h2>
         <hr>
         <canvas id="chart4"> </canvas>
 
@@ -106,49 +105,60 @@
         <script>
 
             // STATISTIQUES GENERALES
-            const ctx = document.getElementById('chart');
             const ctx1 = document.getElementById('chart');
 
             const DATASETS = [
-                { data: [3.63, 3.45, 3.42, 3.15, 3.2], label: 'Océanie' },
-                { data: [2.76, 2.91, 3.15, 3.26, 3.23], label: 'Asie' },
-                { data: [3.99, 3.99, 4.00, 4.08, 3.97], label: 'Afrique' },
-                { data: [5.82, 6.03, 6.01, 5.96, 5.91], label: 'Amérique' },
-                { data: [10.93, 11.12, 10.69, 10.25, 10.11], label: 'Europe' }
+                { data: [3.63, 3.45, 3.42, 3.15, 3.2], label: 'Océanie', backgroundColor: "rgba(255, 49, 49, 0.25)", borderColor: "#810404", fill: true },
+                { data: [2.76, 2.91, 3.15, 3.26, 3.23], label: 'Asie', backgroundColor: "rgba(54, 162, 235, 0.25)", borderColor: "#356f8c", fill: true },
+                { data: [3.99, 3.99, 4.00, 4.08, 3.97], label: 'Afrique', backgroundColor: "rgba(255, 206, 86, 0.25)", borderColor: "#9a6d2b", fill: true },
+                { data: [5.82, 6.03, 6.01, 5.96, 5.91], label: 'Amérique', backgroundColor: "rgba(75, 192, 192, 0.25)", borderColor: "#4e7b7b", fill: true },
+                { data: [10.93, 11.12, 10.69, 10.25, 10.11], label: 'Europe', backgroundColor: "rgba(153, 102, 255, 0.25)", borderColor: "#7b4fbb", fill: true }
             ];
 
             let chart = new Chart(ctx1, {
                 type: 'line',
                 data: {
                     labels: ["2000", "2005", "2010", "2015", "2019"],
-                    datasets: [{
-                        label: 'Océanie',
-                        data: DATASETS[0].data,
-                        backgroundColor: "rgba(255, 49, 49, 0.25)",
-                        borderWidth: 5,
-                        borderColor: "#810404",
-                        pointRadius: 0,
-                        fill: true
-                    }]
+                    datasets: [
+                    ]
                 },
             });
 
-            function handleDataChange(chart, datasetIndex) {
-                chart.data.datasets[0].data = DATASETS[datasetIndex].data;
-                chart.data.datasets[0].label = DATASETS[datasetIndex].label;
+            function updateChart() {
+                chart.data.datasets = [];
+
+                if (document.getElementById("oceanie").checked) {
+                    chart.data.datasets.push(DATASETS[0]);
+                }
+                if (document.getElementById("asie").checked) {
+                    chart.data.datasets.push(DATASETS[1]);
+                }
+                if (document.getElementById("afrique").checked) {
+                    chart.data.datasets.push(DATASETS[2]);
+                }
+                if (document.getElementById("amerique").checked) {
+                    chart.data.datasets.push(DATASETS[3]);
+                }
+                if (document.getElementById("europe").checked) {
+                    chart.data.datasets.push(DATASETS[4]);
+                }
+
                 chart.update();
             }
 
-            const datasetSel = document.getElementById("data-select");
-            datasetSel.onchange = () => {
-                const selectedIndex = parseInt(datasetSel.value);
-                handleDataChange(chart, selectedIndex);
-            };
+            document.getElementById("oceanie").addEventListener("change", updateChart);
+            document.getElementById("asie").addEventListener("change", updateChart);
+            document.getElementById("afrique").addEventListener("change", updateChart);
+            document.getElementById("amerique").addEventListener("change", updateChart);
+            document.getElementById("europe").addEventListener("change", updateChart);
+
+            updateChart();
+
 
 
             // STATISTIQUES BIERE
 
-            const ctx3 = document.getElementById('chart3'); 
+            const ctx3 = document.getElementById('chart3');
 
             new Chart(ctx3, {
                 type: 'bar',
@@ -158,14 +168,15 @@
                         label: ['litres de bière'],
                         data: [1.21, 0.83, 1.18, 2.75, 3.76],
                         backgroundColor: [
-                        "rgba(255, 99, 132, 0.5)",
-                        "rgba(54, 162, 235, 0.5)",
-                        "rgba(255, 206, 86, 0.5)",
-                        "rgba(75, 192, 192, 0.5)",
-                        "rgba(153, 102, 255, 0.5)"
-                        ]
+                            "rgba(255, 99, 132, 0.5)",
+                            "rgba(54, 162, 235, 0.5)",
+                            "rgba(255, 206, 86, 0.5)",
+                            "rgba(75, 192, 192, 0.5)",
+                            "rgba(153, 102, 255, 0.5)"
+                        ],
                     }]
-                }});
+                }
+            });
 
             const data2 = {
                 labels: [
@@ -174,11 +185,11 @@
                     'Afrique',
                     'Amériques',
                     'Europe'
-                    
+
                 ],
                 datasets: [{
                     label: "Consommation de Vin (litres/personne)",
-                    data: [0.68, 1.16, 0.4, 2.2, 2.4], 
+                    data: [0.68, 1.16, 0.4, 2.2, 2.4],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.7)',
                         'rgba(54, 162, 235, 0.7)',
@@ -202,7 +213,7 @@
                         tooltip: {
                             enabled: true,
                             callbacks: {
-                                label: function(tooltipItem) {
+                                label: function (tooltipItem) {
                                     return tooltipItem.label + ': ' + tooltipItem.raw + ' L/personne';
                                 }
                             }
@@ -226,7 +237,7 @@
                         tooltip: {
                             enabled: true,
                             callbacks: {
-                                label: function(tooltipItem) {
+                                label: function (tooltipItem) {
                                     return tooltipItem.label + ': ' + tooltipItem.raw + ' L/personne';
                                 }
                             }
@@ -236,7 +247,7 @@
                         y: {
                             beginAtZero: true,
                             ticks: {
-                                callback: function(value) {
+                                callback: function (value) {
                                     return value + ' L';
                                 }
                             }
