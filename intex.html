@@ -76,6 +76,11 @@
 
 
         <canvas id="chart"> </canvas>
+
+        <canvas id="chart3"> </canvas>
+
+
+
         <container id="data-select-container">
             <select name="datasets" id="data-select">
                 <option value="0">Océanie</option>
@@ -86,6 +91,8 @@
             </select>
         </container>
         <script>
+
+            // STATISTIQUES GENERALES
             const ctx = document.getElementById('chart');
 
             const DATASETS = [
@@ -123,6 +130,32 @@
                 const selectedIndex = parseInt(datasetSel.value);
                 handleDataChange(chart, selectedIndex);
             };
+
+
+            // STATISTIQUES BIERE
+
+            const ctx3 = document.getElementById('chart3'); // Deuxième graphique
+
+            new Chart(ctx3, {
+                type: 'bar',
+                data: {
+                    labels: ["Océanie", "Asie", "Afrique", "Amérique", "Europe"],
+                    datasets: [{
+                        label: ['litres de bière'],
+                        data: [1.21, 0.83, 1.18, 2.75, 3.76],
+                        backgroundColor: [
+                        "rgba(255, 99, 132, 0.5)",
+                        "rgba(54, 162, 235, 0.5)",
+                        "rgba(255, 206, 86, 0.5)",
+                        "rgba(75, 192, 192, 0.5)",
+                        "rgba(153, 102, 255, 0.5)"
+                        ]
+                    }]
+                }});
+
+
+
+
 
 
         </script>
