@@ -59,15 +59,19 @@
                 hausse.
             </p>
 
+
         </div>
 
         <div id="containerAffiche">
             <img id="affiche" src="asset/media/affiche.png" alt="Datalogie sur la consommation d'alcool par habitant">
         </div>
 
-        <hr>
-        <h2 class="h2title" id="conso">Consommation d'alcool</h2>
-        <hr>
+
+        <div id="soustitre">
+            <h2 class="h2title" id="conso">La consommation d'alcool en statistiques</h2>
+        </div>
+
+
 
 
 <canvas id="chart"> </canvas>
@@ -117,44 +121,6 @@
         const selectedIndex = parseInt(datasetSel.value);
         handleDataChange(chart, selectedIndex);
     };
-
-
-
-            /*const colorSel = document.getElementById("col-select");
-            colorSel.onchange = () => {
-                chart.data.datasets[0].backgroundColor = colorSel.value;
-                chart.update();
-            };*/
-
-
-            /*
-        
-            let data = [2.76, 2.91, 3.15, 3.26, 3.23];
-            let labels = ["2000", "2005", "2010", "2015", "2019"];
-        
-                  new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: 'Asie',
-                                data: data,
-                                fill: true
-                            }]
-                        }
-                    });
-        
-                  /*  new Chart(ctx2, {
-                        type: 'polarArea',
-                        data: {
-                            labels: ['Asie', 'Océanie', 'Europe', 'Amérique', 'Afrique'],
-                            datasets: [{
-                                label: 'Consommation alcool par continent',
-                                data: [4.80, 4.58, 7.10, 5.49, 4.85],
-                                borderWidth: 1
-                            }]
-                        },
-                    });*/
 
 
         </script>
