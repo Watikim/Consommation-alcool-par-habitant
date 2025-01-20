@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=0.01">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="asset/style.css">
@@ -70,53 +71,54 @@
         <hr>
 
 
-<canvas id="chart"> </canvas>
-<select name="datasets" id="data-select">
-    <option value="0">Océanie</option>
-    <option value="1">Asie</option>
-    <option value="2">Afrique</option>
-    <option value="3">Amérique</option>
-    <option value="4">Europe</option>
-</select>
+        <canvas id="chart"> </canvas>
+        <container id="data-select-container">
+            <select name="datasets" id="data-select">
+                <option value="0">Océanie</option>
+                <option value="1">Asie</option>
+                <option value="2">Afrique</option>
+                <option value="3">Amérique</option>
+                <option value="4">Europe</option>
+            </select>
+        </container>
+        <script>
+            const ctx = document.getElementById('chart');
 
-<script>
-    const ctx = document.getElementById('chart');
+            const DATASETS = [
+                { data: [3.63, 3.45, 3.42, 3.15, 3.2], label: 'Océanie' },
+                { data: [2.76, 2.91, 3.15, 3.26, 3.23], label: 'Asie' },
+                { data: [3.99, 3.99, 4.00, 4.08, 3.97], label: 'Afrique' },
+                { data: [5.82, 6.03, 6.01, 5.96, 5.91], label: 'Amérique' },
+                { data: [10.93, 11.12, 10.69, 10.25, 10.11], label: 'Europe' }
+            ];
 
-    const DATASETS = [
-        { data: [3.63, 3.45, 3.42, 3.15, 3.2], label: 'Océanie' },
-        { data: [2.76, 2.91, 3.15, 3.26, 3.23], label: 'Asie' },
-        { data: [3.99, 3.99, 4.00, 4.08, 3.97], label: 'Afrique' },
-        { data: [5.82, 6.03, 6.01, 5.96, 5.91], label: 'Amérique' },
-        { data: [10.93, 11.12, 10.69, 10.25, 10.11], label: 'Europe' }
-    ];
+            let chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["2000", "2005", "2010", "2015", "2019"],
+                    datasets: [{
+                        label: 'Océanie',
+                        data: DATASETS[0].data,
+                        backgroundColor: "rgba(255, 49, 49, 0.25)",
+                        borderWidth: 5,
+                        borderColor: "#810404",
+                        pointRadius: 0,
+                        fill: true
+                    }]
+                },
+            });
 
-    let chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["2000", "2005", "2010", "2015", "2019"],
-            datasets: [{
-                label: 'Océanie',
-                data: DATASETS[0].data,
-                backgroundColor: "rgba(255, 49, 49, 0.25)",
-                borderWidth: 5,
-                borderColor:"#810404",
-                pointRadius: 0,
-                fill: true
-            }]
-        },
-    });
+            function handleDataChange(chart, datasetIndex) {
+                chart.data.datasets[0].data = DATASETS[datasetIndex].data;
+                chart.data.datasets[0].label = DATASETS[datasetIndex].label;
+                chart.update();
+            }
 
-    function handleDataChange(chart, datasetIndex) {
-        chart.data.datasets[0].data = DATASETS[datasetIndex].data;
-        chart.data.datasets[0].label = DATASETS[datasetIndex].label;
-        chart.update();
-    }
-
-    const datasetSel = document.getElementById("data-select");
-    datasetSel.onchange = () => {
-        const selectedIndex = parseInt(datasetSel.value);
-        handleDataChange(chart, selectedIndex);
-    };
+            const datasetSel = document.getElementById("data-select");
+            datasetSel.onchange = () => {
+                const selectedIndex = parseInt(datasetSel.value);
+                handleDataChange(chart, selectedIndex);
+            };
 
 
 
