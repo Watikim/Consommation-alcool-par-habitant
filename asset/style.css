@@ -132,7 +132,6 @@ canvas{
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    margin-bottom: 100px;
 }
 
 #data-select:hover {
