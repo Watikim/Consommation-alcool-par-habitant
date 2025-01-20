@@ -91,11 +91,15 @@ p {
     width: 60%;
 }
 
+
 h2{
     font-family: "Carlito";
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 3rem;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
+
 
 canvas{
     width: 50%;
