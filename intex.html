@@ -72,13 +72,7 @@
             <h2 class="h2title" id="conso">La consommation d'alcool en statistiques</h2>
         </div>
 
-
-
-
         <canvas id="chart"> </canvas>
-
-        <canvas id="chart3"> </canvas>
-
 
 
         <div id="data-select-container">
@@ -98,10 +92,16 @@
         <canvas id="chart2"> </canvas>
 
         <hr>
-        <h2 class="h2title" id="conso">Consommation de Vin</h2>
+        <h2 class="h2title" id="conso">Consommation de Bière</h2>
         <hr>
 
         <canvas id="chart3"> </canvas>
+
+        <hr>
+        <h2 class="h2title" id="conso">Consommation de Vin</h2>
+        <hr>
+        <canvas id="chart4"> </canvas>
+
 
         <script>
 
@@ -148,7 +148,7 @@
 
             // STATISTIQUES BIERE
 
-            const ctx3 = document.getElementById('chart3'); // Deuxième graphique
+            const ctx3 = document.getElementById('chart3'); 
 
             new Chart(ctx3, {
                 type: 'bar',
