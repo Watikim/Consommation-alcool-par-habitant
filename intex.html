@@ -71,12 +71,6 @@
 
 
         <canvas id="chart"> </canvas>
-        <select name="colors" id="col-select">
-            <option value="#e6362270">Rouge</option>
-            <option value="#22a1e670">Bleu</option>
-            <option value="#1cad4770">Vert</option>
-            <option value="#ffee0070">Jaune</option>
-        </select>
         <select name="datasets" id="data-select">
             <option value="0">Océanie</option>
             <option value="1">Asie</option>
@@ -94,35 +88,36 @@
             let chart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ["2000", "2005", "2010", "2015", "2019",],
+                    labels: ["2000", "2005", "2010", "2015", "2019"],
                     datasets: [{
-                        label: 'Océanie',
+                        label: '',
                         data: DATASETS[0],
                         backgroundColor: "#e6362270",
-                        borderWidth: 0,
+                        borderWidth: 5,
                         pointRadius: 0
                     }]
                 },
-                options: {
+                /*options: {
                     scales: {
                         y: { min: 0, max: 10.5 }
                     }
-                }
+                }*/
             });
 
             function handleDataChange(chart, datasetIndex) {
                 chart.data.datasets[0].data = DATASETS[datasetIndex];
+                chart.data.datasets[0].label = DATASETS[datasetIndex];
                 chart.update();
             }
 
             const datasetSel = document.getElementById("data-select");
-            datasetSel.onchange = () => { handleDataChange(chart, parseInt(datasetSel.value)) };
+            datasetSel.onchange = () => { handleDataChange(chart, parseInt(datasetSel.value), parseInt(datasetSel.label)) };
 
-            const colorSel = document.getElementById("col-select");
+            /*const colorSel = document.getElementById("col-select");
             colorSel.onchange = () => {
                 chart.data.datasets[0].backgroundColor = colorSel.value;
                 chart.update();
-            };
+            };*/
 
 
             /*
