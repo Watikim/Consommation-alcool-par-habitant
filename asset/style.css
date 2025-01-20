@@ -104,11 +104,44 @@ h2{
 canvas{
     width: 50%;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 
 #footer{
     background-color: #e3e3e3;
     height: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Carlito", sans-serif;
+}
+
+
+#data-select {
+    color: white;
+    background: #810404;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 100px;
+}
+
+#data-select:hover {
+    background: #810404;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+#data-select option {
+    background: #810404;
+    color: white;
 }
