@@ -28,7 +28,7 @@
                     e.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
                     const targetElement = document.getElementById(targetId);
-        
+
                     if (targetElement) {
                         targetElement.scrollIntoView({
                             behavior: 'smooth'
@@ -36,7 +36,7 @@
                     }
                 });
             });
-        </script>        
+        </script>
 
 
     </header>
@@ -49,18 +49,20 @@
         </section>
 
         <div>
-            <p id="intro">En 2019, la consommation mondiale d’alcool représentait une préoccupation majeure en matière de
+            <p id="intro">En 2019, la consommation mondiale d’alcool représentait une préoccupation majeure en matière
+                de
                 santé
-                publique. L’Organisation mondiale de la santé a estimé que chaque personne âgée de 15 ans et plus consommait
+                publique. L’Organisation mondiale de la santé a estimé que chaque personne âgée de 15 ans et plus
+                consommait
                 en moyenne 6,2 litres d’alcool pur par an. L’Europe demeurait la région la plus touchée, bien que la
-                consommation ait légèrement diminué, tandis que l’Asie et l’Afrique montraient des tendances à la hausse.
+                consommation ait légèrement diminué, tandis que l’Asie et l’Afrique montraient des tendances à la
+                hausse.
             </p>
 
         </div>
 
         <div id="containerAffiche">
-            <img id="affiche" src="asset/media/affiche.png"
-                alt="Datalogie sur la consommation d'alcool par habitant">
+            <img id="affiche" src="asset/media/affiche.png" alt="Datalogie sur la consommation d'alcool par habitant">
         </div>
 
         <hr>
@@ -69,41 +71,93 @@
 
 
         <canvas id="chart"> </canvas>
-   
+        <select name="colors" id="col-select">
+            <option value="#e6362270">Rouge</option>
+            <option value="#22a1e670">Bleu</option>
+            <option value="#1cad4770">Vert</option>
+            <option value="#ffee0070">Jaune</option>
+        </select>
+        <select name="datasets" id="data-select">
+            <option value="0">Océanie</option>
+            <option value="1">Asie</option>
+            <option value="2">Afrique</option>
+            <option value="3">Amérique</option>
+            <option value="4">Europe</option>
+
+        </select>
+
         <script>
             const ctx = document.getElementById('chart');
-     
 
-    let data = [2.76, 2.91, 3.15, 3.26, 3.23];
-    let labels = ["2000", "2005", "2010", "2015", "2019"];
+            const DATASETS = [[3.63, 3.45, 3.42, 3.15, 3.2], [2.76, 2.91, 3.15, 3.26, 3.23], [3.99, 3.99, 4.00, 4.08, 3.97], [5.82, 6.03, 6.01, 5.96, 5.91], [10.93, 11.12, 10.69, 10.25, 10.11]];
 
-          new Chart(ctx, {
+            let chart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: labels,
+                    labels: ["2000", "2005", "2010", "2015", "2019",],
                     datasets: [{
-                        label: 'data',
-                        data: data
+                        label: 'Océanie',
+                        data: DATASETS[0],
+                        backgroundColor: "#e6362270",
+                        borderWidth: 0,
+                        pointRadius: 0
                     }]
+                },
+                options: {
+                    scales: {
+                        y: { min: 0, max: 10.5 }
+                    }
                 }
             });
 
-          /*  new Chart(ctx2, {
-                type: 'polarArea',
-                data: {
-                    labels: ['Asie', 'Océanie', 'Europe', 'Amérique', 'Afrique'],
-                    datasets: [{
-                        label: 'Consommation alcool par continent',
-                        data: [4.80, 4.58, 7.10, 5.49, 4.85],
-                        borderWidth: 1
-                    }]
-                },
-            });*/
-            
-            
+            function handleDataChange(chart, datasetIndex) {
+                chart.data.datasets[0].data = DATASETS[datasetIndex];
+                chart.update();
+            }
+
+            const datasetSel = document.getElementById("data-select");
+            datasetSel.onchange = () => { handleDataChange(chart, parseInt(datasetSel.value)) };
+
+            const colorSel = document.getElementById("col-select");
+            colorSel.onchange = () => {
+                chart.data.datasets[0].backgroundColor = colorSel.value;
+                chart.update();
+            };
+
+
+            /*
+        
+            let data = [2.76, 2.91, 3.15, 3.26, 3.23];
+            let labels = ["2000", "2005", "2010", "2015", "2019"];
+        
+                  new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Asie',
+                                data: data,
+                                fill: true
+                            }]
+                        }
+                    });
+        
+                  /*  new Chart(ctx2, {
+                        type: 'polarArea',
+                        data: {
+                            labels: ['Asie', 'Océanie', 'Europe', 'Amérique', 'Afrique'],
+                            datasets: [{
+                                label: 'Consommation alcool par continent',
+                                data: [4.80, 4.58, 7.10, 5.49, 4.85],
+                                borderWidth: 1
+                            }]
+                        },
+                    });*/
+
+
         </script>
 
-        
+
     </main>
 
     <footer class="headerFooter">
