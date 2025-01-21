@@ -45,12 +45,13 @@
     <main>
 
         <section id="imgbackground">
-            <h1 id="title">TAUX DE CONSOMMATION D'ALCOOL <br>  DANS LE MONDE</h1>
+            <h1 id="title">TAUX DE CONSOMMATION D'ALCOOL <br> DANS LE MONDE</h1>
 
         </section>
 
         <div>
-            <p id="intro">En 2019, la consommation mondiale d’alcool représentait une préoccupation majeure en matière
+            <p id="texte" id="intro">En 2019, la consommation mondiale d’alcool représentait une préoccupation majeure
+                en matière
                 de
                 santé
                 publique. L’Organisation mondiale de la santé a estimé que chaque personne âgée de 15 ans et plus
@@ -74,7 +75,7 @@
         <hr>
         <h3 class="h3title" id="conso">Consommation d'alcool</h3>
         <hr>
-        <p class="precision">en litres par personnes</p>
+        <p id="texte" class="precision">en litres par personnes</p>
 
         <canvas id="chart"> </canvas>
 
@@ -87,28 +88,85 @@
             <label><input type="checkbox" id="europe" checked> <span>Europe</span></label>
         </div>
 
+        <div>
+            <button class="info-btn" data-modal="modal1">Plus d'information</button>
+        </div>
+
+        <!-- Modal associé -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="detail">L'on peut voir que l'Europe affiche les niveaux les plus élevés, bien qu'en baisse
+                    progressive, passant de 10,93 L/personne en 2000 à 10,11 L en 2019. L'Amérique suit avec
+                    des valeurs stables autour de 6 L/personne. L'Afrique reste relativement constante autour de 4
+                    L/personne. L'Asie montre une augmentation régulière de 2,76 à 3,23 L/personne, tandis que l'Océanie
+                    enregistre une légère diminution, de 3,63 à 3,20 L/personne. Ces données soulignent des disparités
+                    significatives entre les régions, avec une baisse marquée en Europe et une croissance modérée en
+                    Asie.</p>
+            </div>
+        </div>
+
         <hr>
         <h3 class="h3title" id="conso">Consommation de boisson spiritueux</h3>
         <hr>
-        <p class="precision">en litres par personnes</p>
+        <p id="texte" class="precision">en litres par personnes</p>
 
         <div style="position: relative; height:70vh; width:100vw">
             <canvas id="chart2"></canvas>
         </div>
 
+        <div>
+            <button class="info-btn" data-modal="modal2">Plus d'information</button>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="detail"> Pour la consommation de boisson spiritueux, l'Europe figure en tête avec une consommation de 2,4 L/personne, suivie par
+                    l'Amérique à 2,2 L/personne. L'Asie et l'Océanie ont des consommations similaires, respectivement
+                    1,16 et 0,68 L/personne. L'Afrique, quant à elle, enregistre la consommation la plus faible avec
+                    seulement 0,4 L/personne. </p>
+            </div>
+        </div>
+
         <hr>
         <h3 class="h3title" id="conso">Consommation de Bière</h3>
         <hr>
-        <p class="precision">en litres par personnes</p>
+        <p id="texte" class="precision">en litres par personnes</p>
 
         <canvas id="chart3"> </canvas>
 
+        <div>
+            <button class="info-btn" data-modal="modal3">Plus d'information</button>
+        </div>
+
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="detail"> Nous pouvons voir que l'Europe à la consommation de bière la plus élevée, atteignant
+                    3,76 L/personne,
+                    suivie par l'Amérique à 2,75 L/personne. L'Océanie et l'Afrique affichent des consommations
+                    similaires, respectivement 1,21 et 1,18 L/personne, tandis que l'Asie enregistre la consommation la
+                    plus faible
+                    avec 0,83 L/personne.</p>
+            </div>
+        </div>
         <hr>
         <h3 class="h3title" id="conso">Consommation de Vin</h3>
         <hr>
-        <p class="precision">en litres par personnes</p>
+        <p id="texte" class="precision">en litres par personnes</p>
 
         <canvas id="chart4"> </canvas>
+        <div>
+            <button class="info-btn" data-modal="modal4">Plus d'information</button>
+        </div>
+
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="detail"> J'adore </p>
+            </div>
+        </div>
 
 
         <script>
@@ -197,7 +255,7 @@
 
                 ],
                 datasets: [{
-                    label: "Consommation de Vin",
+                    label: "Consommation de spiritueux",
                     data: [0.68, 1.16, 0.4, 2.2, 2.4],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.7)',
@@ -234,10 +292,33 @@
 
             const ctx2 = document.getElementById('chart2');
             new Chart(ctx2, config2);
+            
+            const data3 = {
+                labels: [
+                    'Océanie',
+                    'Asie',
+                    'Afrique',
+                    'Amérique',
+                    'Europe'
+
+                ],
+                datasets: [{
+                    label: "Consommation de vin",
+                    data: [0.7, 0.26, 0.28, 0.7, 2.8],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)',
+                        'rgba(153, 102, 255, 0.7)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
 
             const config4 = {
                 type: 'line',
-                data: data2,
+                data: data3,
                 options: {
                     responsive: true,
                     plugins: {
@@ -279,7 +360,27 @@
 
     </footer>
 
+    <script>
+        document.querySelectorAll('.info-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const modalId = this.getAttribute('data-modal');
+                document.getElementById(modalId).style.display = 'block';
+            });
+        });
 
+        document.querySelectorAll('.close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function () {
+                this.parentElement.parentElement.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', function (event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        });
+
+    </script>
 </body>
 
 
