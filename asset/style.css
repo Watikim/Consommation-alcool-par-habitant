@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'bahnschriftregular';
     src: url('media/bahnschrift_1-webfont.woff2') format('woff2'),
-         url('media/bahnschrift_1-webfont.woff') format('woff');
+        url('media/bahnschrift_1-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -16,7 +16,7 @@ body {
 }
 
 
-#header{
+#header {
     background-color: #810404;
     height: 100px;
     position: fixed;
@@ -27,26 +27,26 @@ body {
 }
 
 
-ul{
+ul {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
     padding-top: 45px;
 }
 
-    a:hover{
-        cursor: pointer;
-        font-weight: 700;
-    }
+a:hover {
+    cursor: pointer;
+    font-weight: 700;
+}
 
-a{
+a {
     text-decoration: none;
     color: #ffffff;
     font-family: "bahnschriftregular";
     font-weight: 400;
 }
 
-a.clicked{
+a.clicked {
     transition: 1s;
 }
 
@@ -56,7 +56,7 @@ main {
     text-align: center;
 }
 
-#imgbackground{
+#imgbackground {
     background-image: url(media/alcool.jpeg);
     background-size: cover;
     background-position: center;
@@ -64,7 +64,7 @@ main {
 }
 
 
-h1{
+h1 {
     font-size: 5rem;
     font-family: "Carlito";
     font-weight: 700;
@@ -79,7 +79,7 @@ p {
     /*text-align: left;*/
 }
 
-#containerAffiche{
+#containerAffiche {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,18 +88,18 @@ p {
     height: 1100px;
 }
 
-#affiche{
+#affiche {
     width: 60%;
 }
 
-#soustitre{
+#soustitre {
     background-image: url(media/drinking.webp);
     background-size: cover;
     background-position: center;
     margin-bottom: 100px;
 }
 
-h2{
+h2 {
     font-family: "Carlito";
     font-weight: 700;
     font-size: 3.5rem;
@@ -108,35 +108,67 @@ h2{
     color: white;
 }
 
-#conso{
+#conso {
     margin-top: 30;
 }
 
+.date {
+    color: black;
+    margin: 20px 0px -20px 0px;
+}
 
-.h3title{
+
+.h3title {
     font-family: "Carlito";
     font-weight: 700;
     font-size: 2rem;
     margin-top: 150px;
 }
 
-.precision{
+.precision {
     font-size: 1.2rem;
     margin-top: -30px;
     margin-bottom: 100px;
 }
 
-canvas{
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.tooltip .tooltiptext {
+    font-size: 1.2rem;
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+canvas {
     width: 50%;
     margin: 0 auto;
     margin-bottom: 30px;
 }
 
-
-#footer{
-    background-color: #e3e3e3;
-    height: 100px;
-}
 
 .container {
     display: flex;
@@ -162,7 +194,7 @@ canvas{
 .checkbox-container input[type="checkbox"] {
     margin-right: 5px;
     margin-left: 80px;
-    transform: scale(1.8); 
+    transform: scale(1.8);
 }
 
 .checkbox-container span {
@@ -174,3 +206,85 @@ canvas{
     margin-top: 30px;
 }
 
+
+footer {
+    background-color: #810404;
+    height: 100px;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    font-family: "Carlito";
+    color: white;
+}
+
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    p {
+        margin: 5% 10%;
+        font-size: 0.5rem;
+    }
+
+    #containerAffiche {
+        height: auto;
+        padding: 20px;
+    }
+
+    ul {
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    #affiche {
+        width: 80%;
+    }
+
+    canvas {
+        width: 80%;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        margin: 5% 5%;
+        font-size: 0.5rem;
+    }
+
+    ul {
+        padding-top: 10px;
+    }
+
+    #affiche {
+        width: 90%;
+    }
+
+    canvas {
+        width: 90%;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+        transform: scale(1);
+    }
+}

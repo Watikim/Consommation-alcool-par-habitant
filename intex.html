@@ -45,7 +45,7 @@
     <main>
 
         <section id="imgbackground">
-            <h1 id="title">TAUX DE CONSOMMATION D'ALCOOL <br>  DANS LE MONDE</h1>
+            <h1 id="title">TAUX DE CONSOMMATION D'ALCOOL <br> DANS LE MONDE</h1>
 
         </section>
 
@@ -88,27 +88,36 @@
         </div>
 
         <hr>
-        <h3 class="h3title">Consommation de boisson spiritueux</h3>
+        <h3 class="h3title">Consommation de <span class="tooltip">Spiritueux<span class="tooltiptext">Les spiritueux sont des boissons alcoolisées obtenues par distillation comme la Vodka, le Gin ou le Whisky</span></span> en 2019</h3>
         <hr>
         <p class="precision">en litres par personnes</p>
+
 
         <div style="position: relative; height:70vh; width:100%">
             <canvas id="chart2"></canvas>
         </div>
 
         <hr>
-        <h3 class="h3title">Consommation de Bière</h3>
+        <h3 class="h3title">Consommation de Bière en 2019</h3>
         <hr>
         <p class="precision">en litres par personnes</p>
 
         <canvas id="chart3"> </canvas>
 
         <hr>
-        <h3 class="h3title">Consommation de Vin</h3>
+        <h3 class="h3title">Consommation de Vin en 2019</h3>
         <hr>
         <p class="precision">en litres par personnes</p>
 
         <canvas id="chart4"> </canvas>
+
+        <script>
+            document.querySelector('.tooltip').addEventListener('click', function () {
+                var tooltipText = this.querySelector('.tooltiptext');
+                tooltipText.classList.toggle('show');
+            });
+
+        </script>
 
 
         <script>
@@ -275,8 +284,8 @@
 
     </main>
 
-    <footer class="headerFooter">
-
+    <footer>
+        <h4>All rights reserved - Le Couls Le Fustec Clair</h4>
     </footer>
 
 
