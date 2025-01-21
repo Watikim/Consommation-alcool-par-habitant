@@ -68,7 +68,7 @@ h1{
     font-family: "Carlito";
     font-weight: 700;
     font-style: normal;
-    color: rgb(102, 15, 15);
+    color: white;
 }
 
 p {
@@ -84,7 +84,7 @@ p {
     justify-content: center;
     align-items: center;
     background-color: #810404;
-    height: 900px;
+    height: 1100px;
 }
 
 #affiche{
@@ -95,6 +95,7 @@ p {
     background-image: url(media/drinking.webp);
     background-size: cover;
     background-position: center;
+    margin-bottom: 100px;
 }
 
 h2{
@@ -111,8 +112,13 @@ h2{
     font-family: "Carlito";
     font-weight: 700;
     font-size: 2rem;
-    margin-top: 300px;
-    margin-bottom: 50px;
+    margin-top: 150px;
+}
+
+.precision{
+    font-size: 1.2rem;
+    margin-top: -30px;
+    margin-bottom: 100px;
 }
 
 
