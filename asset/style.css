@@ -88,7 +88,7 @@ h1 {
 }
 
 #affiche {
-    width: 60%;
+    width: 70%;
 }
 
 #soustitre {
@@ -160,7 +160,7 @@ h2 {
 
 
 canvas {
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
     margin-bottom: 30px;
 }
@@ -246,29 +246,29 @@ footer {
     }
 
     #chart {
-        height: 600px;
-        width: 800px;
+        height: 60vh;
+        width: 100%;
     }
 
     #chart2 {
-        height: 600px;
-        width: 800px;
+        height: 60vh;
+        width: 100%;
     }
 
     #chart3 {
-        height: 600px;
-        width: 800px;
+        height: 60vh;
+        width: 100%;
     }
 
     #chart4 {
-        height: 600px;
-        width: 800px;
+        height: 60vh;
+        width: 100%;
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px){
     h1{
-        font-size: 2.7rem;
+        font-size: 1.5rem;
     }
 
     #imgbackground {
@@ -276,48 +276,77 @@ footer {
     }
 
     #texte{
-        font-size: 1rem;
-        margin-left: 5%;
-        margin-right: 5%;
+        font-size: 0.7rem;
+        margin: 10% 5% 10% 5%;
     }
 
     #containerAffiche{
-        height: 500px;
+        height: 350px;
+    }
+
+    #affiche{
+        width: 70%;
+    }
+
+    #soustitre{
+        margin-bottom: 0;
+    }
+
+    .precision{
+        font-size: 1rem;
+        margin-bottom: 20px;
     }
 
     h2{
-        margin-top: 100px;
-        margin-bottom: 100px;
-        font-size: 2rem;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 1.5rem;
     }
 
     .h3title{
         margin-top: 50px;
-        font-size: 1.5rem;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
     }
 
     #chart {
-        height: 500px;
-        width: 700px;
+        height: 60vh;
+        width: 100%;
+    }
+
+    .tooltip .tooltiptext {
+        font-size: 1rem;
     }
 
     #chart2 {
-        height: 500px;
-        width: 700px;
+        height: 60vh;
+        width: 80%;
     }
 
+
     #chart3 {
-        height: 500px;
-        width: 700px;
+        height: 60vh;
+        width: 100%;
     }
 
     #chart4 {
-        height: 500px;
-        width: 700px;
+        height: 60vh;
+        width: 100%;
     }
 
     .checkbox-container input[type="checkbox"] {
         margin-left: 30px;
+        transform: scale(1.5);
+    }
+
+    .checkbox-container{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 0.8rem;
+    }
+
+    .lebouton{
+        margin-bottom: 100px;
     }
 
 
@@ -348,21 +377,19 @@ footer {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
+    width: 60%;
+    max-width: 100px;
     text-align: center;
+    font-size: 0.8rem;
 }
 
 #detail {
     color: #810404;
-    size: 1rem;
     font-family: "Carlito";
     text-align: left;
-
 }
 
 .close {
