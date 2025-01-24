@@ -88,7 +88,7 @@ h1 {
 }
 
 #affiche {
-    width: 70%;
+    width: 55%;
 }
 
 #soustitre {
@@ -216,6 +216,11 @@ footer {
     justify-content: center;
     font-family: "Carlito";
     color: white;
+}
+
+#sources{
+    margin-top: 30px;
+    text-decoration: underline;
 }
 
 
